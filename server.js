@@ -7,9 +7,9 @@ const express = require('express');
 const app = express();
 
 // 3- Create your endpoints/ routehandlers
-app.get('/', (req, res) => {
+/* app.get('/', (req, res) => {
   res.send('Hello World!');
-});
+}); */
 
 // 4- Starting the server
 const port = 5000;
@@ -52,6 +52,7 @@ console.log(users);
 //@POST /api/users
 //@desc add a user
 app.post('/api/users', (req, res) => {
+  //req.body holds parameters that are sent up from the client as part of a POST request
   let newUser = { ...req.body, id: Math.random() };
   users.push(newUser);
   res.status(200).json({
